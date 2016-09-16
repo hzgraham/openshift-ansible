@@ -44,3 +44,10 @@
     dest: "{{ named_certs_dir }}"
     mode: 0600
   with_items: "{{ named_certificates | oo_collect('cafile') }}"
+
+- name: Land named Intermediate CA certificate
+  copy:
+    src: "{{ item }}"
+    dest: "{{ named_certs_dir }}"
+    mode: 0600
+  with_items: "{{ named_certificates | oo_collect('intcafile') }}"

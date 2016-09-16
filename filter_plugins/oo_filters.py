@@ -543,6 +543,8 @@ class FilterModule(object):
             certificate['keyfile'] = os.path.join(named_certs_dir, os.path.basename(certificate['keyfile']))
             if 'cafile' in certificate:
                 certificate['cafile'] = os.path.join(named_certs_dir, os.path.basename(certificate['cafile']))
+            if 'intcafile' in certificates:
+                certificate['intcafile'] = os.path.join(named_certs_dir, os.path.basename(certificate['intcafile']))
         return certificates
 
     @staticmethod
